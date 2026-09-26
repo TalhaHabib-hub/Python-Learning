@@ -48,7 +48,16 @@ print('14',L) # L isn't changed
 L.extend(m) # extend the L with adding m at the end
 
 print('15',L) # L is changed
+# so extension can be done this way
+print(L)
+print(L.pop())
+L += ['TalhaHabib']
+print(L)
+print(L.pop())
+print(['talha',453]+['sajid',234])
+
 '''
+L.pop() # it removes and return the removed value
 L.append(4)
 L.reverse()
 L.sort()
@@ -58,6 +67,36 @@ print(L.count(3))
 m = L
 m = L.copy()
 L.insert(3,503)
+now to add multiple items in we have to use slicing
 K = L + m 
 L.extend(m)
 '''
+# lists are essential python data structure
+print(503 in L)
+L.remove(189) # only one at a time
+print(L)
+L[1:1] = ['Talha','squirl']
+print(L)
+L.remove('Talha')
+L.remove('squirl')
+print(L)
+L.sort()
+print(L)
+#  Talha the sorting will not be as you want when there are higher and lower alphabaticall order
+z = ['Talha','ahmad','Abid']
+z.sort()
+print(z) # look in this one 
+# I am making new one so you will rember this
+z.sort(key=str.lower)
+print(z) # now it is sorting how I had imagined
+# sir has done something like this he sad that the doing sorting will change the actuall list to avoid it use copy of the list
+zCopy = z[:]
+rCopy = z
+print(zCopy)
+#these two will work the same
+print(rCopy)
+'''Talha there is another more efficient way to do sort a list without changing a list and that is by using a gloabal sorten 
+to do it simply write sorted just write sorted(list,make it that case doesn't matter or leave it) then print it (mean do all this inside the function)'''
+k = ['Ali','Sajid','rashid']
+print(sorted(k,key=str.lower))
+print(k)
