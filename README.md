@@ -2,7 +2,7 @@
 
 A personal collection of Python scripts and exercises documenting my journey learning Python from the ground up — starting with the basics of syntax and variables, and progressing through data structures, functions, file handling, and object-oriented programming.
 
-> 📚 Each file is numbered in the order the topic was learned, so the repo doubles as a step-by-step course log.
+>  Each file is numbered in the order the topic was learned, so the repo doubles as a step-by-step course log.
 
 ## About
 
