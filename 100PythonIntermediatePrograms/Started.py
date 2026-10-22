@@ -1,0 +1,1 @@
+print("InshaAllah will be consistent and will complete these tasks during exams and each day InshAllah at least 5 programs")
