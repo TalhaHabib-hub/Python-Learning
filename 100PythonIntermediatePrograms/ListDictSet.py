@@ -39,11 +39,11 @@ print("matrix:", matrix)
 print("flat:", flat)
 
 # Comprehensions used in this program, written without their surrounding brackets:
-# n**2 for n in nums
-# n for n in nums if n % 2 == 0
-# "even" if n % 2 == 0 else "odd" for n in nums
-# n: n**3 for n in nums if n <= 5
-# len(w) for w in ["apple", "fig", "kiwi", "plum", "pear"]
-# r * c for c in range(1, 4)
-# [r * c for c in range(1, 4)] for r in range(1, 4)
-# x for row in matrix for x in row
+# n**2 for n in nums  # Square each number in nums.
+# n for n in nums if n % 2 == 0  # Keep only numbers divisible by 2.
+# "even" if n % 2 == 0 else "odd" for n in nums  # Label each number even or odd.
+# n: n**3 for n in nums if n <= 5  # Pair each number up to 5 with its cube.
+# len(w) for w in ["apple", "fig", "kiwi", "plum", "pear"]  # Get each word's length.
+# r * c for c in range(1, 4)  # Multiply row number r by each column number c.
+# [r * c for c in range(1, 4)] for r in range(1, 4)  # Make one multiplication row for each r.
+# x for row in matrix for x in row  # Take every number from each row in matrix.
