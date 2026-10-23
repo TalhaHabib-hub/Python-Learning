@@ -1,3 +1,6 @@
+# A comprehension makes a new collection in one short expression by working through items one at a time.
+# we can add a condition to keep only some items, choose between values, or use more than one loop.
+
 # What I learned in this program:
 # - Use range() to create a sequence of numbers.
 # - Use list comprehensions to make lists, filter values, and label items.
