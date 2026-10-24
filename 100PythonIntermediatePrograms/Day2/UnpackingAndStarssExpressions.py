@@ -50,3 +50,5 @@ for i, (key, value) in enumerate(config.items(), start=1):
 # and the unused letters are collected in a list named _.
 head, *_ = "hello"
 print(head)
+print(*_); 
+print(_); 
