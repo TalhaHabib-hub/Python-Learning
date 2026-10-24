@@ -16,10 +16,16 @@ if __name__ == "__main__"
 In this example, the main function contains the code that should be run when the script is run directly. The if statment at the bottom checks whether the _name_ variable is equal to _main_. if it is, the main function is called.
 
 '''
-import Talha    # Talha is a file
-Talha.welcome()
-''' on something like a shell harry bhai  wrote this.     
-# python Talha.py 
+def main():
+    import Talha  # Talha is a file
+    Talha.welcome()
+
+
+if __name__ == "__main__":
+    main()
+
+''' on something like a shell harry bhai  wrote this.
+# python Talha.py
 this executed the function inside the Talha.py file
 then
 # python main.py

@@ -1,29 +1,42 @@
 import requests
-import win32com.client as wincl
 
-# Setup TTS
-spk = wincl.Dispatch("SAPI.SpVoice")
-spk.Rate = 0 # speed
-spk.Volume = 100
+try:
+    import win32com.client as wincl
+except ImportError:
+    wincl = None
+
 
 def get_meaning(word):
     url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
     try:
         res = requests.get(url, timeout=5).json()
-        # Grab first definition
         meaning = res[0]['meanings'][0]['definitions'][0]['definition']
         return meaning
-    except:
+    except Exception:
         return "Sorry, I couldn't find a meaning for that word."
 
-while True:
-    word = input("\nEnter a word [or 'exit']: ").strip().lower()
 
-    if word == 'exit':
-        break
+def speak_meaning(word, meaning):
+    if wincl is None:
+        return
 
-    meaning = get_meaning(word)
-    print(f"\n{word}: {meaning}")
-
-    # Speak it out loud
+    spk = wincl.Dispatch("SAPI.SpVoice")
+    spk.Rate = 0
+    spk.Volume = 100
     spk.Speak(f"{word}. Meaning: {meaning}")
+
+
+def main():
+    while True:
+        word = input("\nEnter a word [or 'exit']: ").strip().lower()
+
+        if word == 'exit':
+            break
+
+        meaning = get_meaning(word)
+        print(f"\n{word}: {meaning}")
+        speak_meaning(word, meaning)
+
+
+if __name__ == "__main__":
+    main()
