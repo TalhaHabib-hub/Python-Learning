@@ -1,38 +1,76 @@
 from operator import itemgetter
 
-# Create a list of numbers from 0 to 9.
+# This line brings in a tool called itemgetter.
+# It helps us say: "sort by the second value in each item".
+
+# -------------------------------------------------------------------
+# Part 1: Slicing a list
+# -------------------------------------------------------------------
+# A list of numbers from 0 to 9.
 data = list(range(10))
+print("Original list:", data)
 
-# Slice examples:
-# data[2:7] -> elements from index 2 up to 6
-# data[::2] -> every 2nd element
+# Slicing means taking a part of the list.
+# data[2:7]  -> start from index 2 and go up to index 6
+# data[::2]  -> take every 2nd item
 # data[::-1] -> reverse the list
-# data[-3:] -> last 3 elements
-print(data[2:7], data[::2], data[::-1], data[-3:])
+# data[-3:]  -> take the last 3 items
+print("Slice 2:7:", data[2:7])
+print("Every 2nd item:", data[::2])
+print("Reversed list:", data[::-1])
+print("Last 3 items:", data[-3:])
 
-# Replace 3 items (indexes 2, 3, 4) with only 2 items: "a" and "b"
-data[2:5] = ["a", "b"]  # replace three items with two
-print(data)
+# -------------------------------------------------------------------
+# Part 2: Replacing items in a list
+# -------------------------------------------------------------------
+# We are replacing 3 items (at positions 2, 3, 4) with just 2 items: "a" and "b"
+# Think of it like: "Take 3 seats and replace them with 2 seats."
+data[2:5] = ["a", "b"]
+print("After replacing 3 items with 2:", data)
 
-# A list of (name, age) pairs.
+# -------------------------------------------------------------------
+# Part 3: Sorting people by age
+# -------------------------------------------------------------------
+# Each person is stored as a pair: (name, age)
+# Example: ("Ana", 31) means Ana is 31 years old.
 people = [("Ana", 31), ("Bilal", 25), ("Chen", 31), ("Dina", 22)]
 
-# Sort by age in ascending order (second item in each tuple)
+# sorted(people, key=lambda p: p[1])
+# This means: sort the list by the second value in each pair, which is age.
+# So it sorts from youngest to oldest.
+print("People sorted by age (youngest to oldest):")
 print(sorted(people, key=lambda p: p[1]))
 
-# Sort by age in descending order, and if ages are equal, sort by name ascending
-# (-p[1] makes larger ages come first, then p[0] breaks ties alphabetically)
-print(sorted(people, key=lambda p: (-p[1], p[0])))  # age desc, then name
+# This time, sort by age in descending order.
+# -p[1] makes bigger ages come first.
+# If ages are equal, then p[0] (the name) is used to decide the order.
+print("People sorted by age (oldest to youngest):")
+print(sorted(people, key=lambda p: (-p[1], p[0])))
 
-# Same as sorting by age descending, but using itemgetter from operator module
+# This does the same as above, but using itemgetter from the operator module.
+# It is a cleaner way to say: "use the second item in each tuple as the sorting key."
+print("People sorted by age descending using itemgetter:")
 print(sorted(people, key=itemgetter(1), reverse=True))
 
-# Words with mixed capitalization.
+# -------------------------------------------------------------------
+# Part 4: Sorting words, but with case differences
+# -------------------------------------------------------------------
+# This list contains words with different capitalization.
 words = ["banana", "Apple", "cherry"]
 
-# sorted(words) sorts in default ASCII/lexicographic order,
-# which may place uppercase letters before lowercase ones.
-print(sorted(words))
+# Python sorts uppercase and lowercase letters differently by default.
+# So this may not look like normal alphabetical order.
+print("Words sorted normally:", sorted(words))
 
-# sorted(words, key=str.lower) ignores case and sorts alphabetically by lowercase version.
-print(sorted(words, key=str.lower))
+# Here we tell Python: "ignore the case and compare lowercase versions only."
+# This gives a more natural alphabetical order.
+print("Words sorted ignoring case:", sorted(words, key=str.lower))
+
+# -------------------------------------------------------------------
+# Simple summary:
+# -------------------------------------------------------------------
+# - slicing helps us grab parts of a list
+# - replacing lets us change parts of a list
+# - sorting lets us arrange data in a useful order
+# - key functions tell Python what value to sort by
+# - key=str.lower makes sorting ignore uppercase/lowercase differences
