@@ -9,7 +9,7 @@ text = "  Hello Python  "
 print(text.strip().upper())              # remove spaces, uppercase
 print(f"{name} is {age} years old")      # f-string formatting
 print("Python"[0], "Python"[-1], "Python"[1:4])  # indexing & slicing
-
+#tried 
 # ---------- 3. CONDITIONALS ----------
 print("\n=== 3. Conditionals ===")
 score = 78
