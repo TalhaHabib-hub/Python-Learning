@@ -1,127 +1,116 @@
 # Python Learning
 
-A personal collection of Python scripts and exercises documenting my journey learning Python from the ground up — starting with the basics of syntax and variables, and progressing through data structures, functions, file handling, and object-oriented programming.
+![Python Learning overview](images/repo-overview.png)
 
->  Each file is numbered in the order the topic was learned, so the repo doubles as a step-by-step course log.
+A personal, step-by-step log of learning Python from the ground up: **95 Python scripts, 20 Jupyter notebooks and 3,600+ lines of code**, covering syntax, control flow, functions, data structures, error handling, file handling, and object-oriented programming, plus small projects.
 
-## About
+**Author:** Talha Habib
 
-This repository is **not a single application** but a series of standalone `.py` scripts, each focused on one Python concept or a small practice exercise. It's meant to track progress and serve as a personal reference to revisit fundamentals and see how understanding has grown over time.
+> Lessons in the root folder are numbered in the order the topics were learned, so the repo doubles as a course log. Read them in numeric order (`1…py` → `85…py`) for a beginner-to-intermediate path.
 
-## Topics Covered
+---
+
+## What's inside
+
+| Location | What it contains |
+|---|---|
+| Root folder (`1…py` – `85…py`) | 84 numbered lessons and exercises, in the order learned |
+| [`jupiter/`](jupiter) | 20 Jupyter notebooks: OOP, functions, exceptions, file handling, modules, loops, and more |
+| [`100PythonIntermediatePrograms/`](100PythonIntermediatePrograms) | Intermediate practice (Day 1–3): comprehensions, unpacking & star expressions, slicing and sorting |
+| [`clutter/`](clutter) | Extra exercise files (e.g. operator overloading, lesson 77), screenshots and sample files |
+
+---
+
+## Learning path
+
+![Learning path](images/learning-path.png)
+
+---
+
+## Topics covered
+
+The chart shows how many of the 95 `.py` files use each concept.
+
+![Concepts covered](images/concepts-covered.png)
 
 ### Basics & Syntax
-- Introduction to programming & Python, first program, comments and escape sequences
+- Intro to programming and Python, first program, comments and escape sequences
 - Variables, data types, type casting
-- Taking user input, strings, string slicing & methods, f-strings, docstrings
+- User input, strings, slicing, string methods, f-strings, docstrings
 
 ### Control Flow
-- If/else conditionals, match-case statements
-- For loops, while loops, break & continue, for-loop with else
+- `if` / `else`, short-hand if-else, `match`-`case`
+- `for` and `while` loops, `break` / `continue`, `for` loop with `else`, `enumerate`
 
 ### Functions
-- Functions and function arguments
-- Lambda functions
-- Map, filter, reduce
+- Functions and function arguments, recursion
+- `lambda`, `map`, `filter`, `reduce`
 - `is` vs `==`
 
 ### Data Structures
-- Lists and list methods
-- Tuples and tuple operations
-- Sets and set methods
-- Dictionaries and dictionary methods
+- Lists, tuples, sets, dictionaries, and their methods
+- List / dict / set comprehensions, unpacking and star expressions, sorting with `itemgetter`
 
 ### Error Handling
-- Exception handling, `finally` keyword, raising custom errors
+- `try` / `except`, `finally`, raising custom errors
 
 ### Modules & Environment
-- Modules and pip
-- How imports work in Python
-- Virtual environments
-- `os` module
-- `if __name__ == "__main__"`
-- Local vs global variables
+- Modules and `pip`, how imports work, virtual environments
+- `os` module, `time` module, `if __name__ == "__main__"`, local vs global variables
 
 ### File Handling
-- File I/O basics
-- `read()`, `readlines()`, and other file methods
-- `seek()`, `tell()`, and related methods
+- File I/O basics, `read()`, `readlines()`, `seek()`, `tell()`
 
-### Object-Oriented Programming (OOP)
-- Introduction to OOP, classes and objects, constructors
-- Getters and setters, access modifiers
-- Static methods, class methods, instance vs. class variables
-- Class methods as alternative constructors
-- Inheritance: single, multiple, multilevel, hierarchical & hybrid
-- `super()` keyword, method overriding
-- Magic/dunder methods, `dir()`, `__dict__`, and `help()`
+### Object-Oriented Programming
+- Classes and objects, constructors, getters and setters, access modifiers
+- Decorators, static methods, class methods, instance vs class variables
+- Inheritance: single, multiple, multilevel, hierarchical and hybrid
+- `super()`, method overriding, magic / dunder methods, operator overloading
+- `dir()`, `__dict__`, `help()`
 
-### Practice Exercises & Mini Projects
-- Calculator using Python
-- "Kaun Banega Crorepati" quiz game (with solution)
-- Snake, Water, Gun game (with solution)
+### Projects & Exercises
+- Calculator
+- "Kaun Banega Crorepati" quiz game
+- Snake, Water, Gun game
 - Library management system
+- "Clear the clutter" exercise
+- PDF merging
 - Command-line utility
-- PDF merging exercise (with solution)
-- Time module usage
-- Assorted "clear the clutter" and custom dictionary exercises
+- Pronouncing a list of names with the Windows speech API
 
-## Repository Structure
+---
 
-```
-Python-Learning/
-├── 1IntoductionToProgrammingAndPython.py
-├── 2SomeAmazingPythonPrograms.py
-├── 3ModulesAndPip.py
-├── ...
-├── 85commandLineUtility.py
-├── Talha2/11S/            # additional practice folder
-├── clutter/               # practice/exercise files
-├── jupiter/                # Jupyter-related experiments
-├── __pycache__/            # compiled Python cache (auto-generated)
-└── *.txt, *.pdf             # sample files used in file-I/O and PDF exercises
-```
+## Getting started
 
-Files are numbered in the rough order topics were learned (e.g., `1...py` through `85...py`), so reading them in numeric order roughly follows a beginner-to-intermediate Python curriculum.
-
-## Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/TalhaHabib-hub/Python-Learning.git
-   cd Python-Learning
-   ```
-
-2. **Make sure Python 3 is installed**
-   ```bash
-   python --version
-   ```
-
-3. **Run any script directly**
-   ```bash
-   python 20FunctionsInPython.py
-   ```
-
-Some scripts (e.g., the PDF-merging exercise) may require external packages. If a script fails with a `ModuleNotFoundError`, install the missing package with:
 ```bash
-pip install <package-name>
+# clone
+git clone https://github.com/TalhaHabib-hub/Python-Learning.git
+cd Python-Learning
+
+# run any lesson
+python 20FunctionsInPython.py
 ```
+
+A few scripts need extra packages:
+
+| Script | Needs |
+|---|---|
+| PDF merging (lessons 76 and 82) | `pip install PyPDF2` |
+| Command-line utility (lesson 85) | `pip install requests` |
+| Names pronouncer (lesson 83) | `pip install pywin32` (Windows only) |
+
+---
 
 ## Purpose
 
-This repository serves as:
 - A **learning log** tracking progress through core Python concepts
-- A **quick reference** to revisit specific topics (loops, OOP, file handling, etc.)
-- A **practice ground** for small coding exercises and mini projects
+- A **quick reference** for revisiting topics (loops, OOP, file handling, …)
+- A **practice ground** for small exercises and mini projects
 
 ## Contributing
 
-This is a personal learning repository and isn't actively seeking contributions. That said, feel free to explore, fork, or open an issue if you spot something worth discussing.
-
-## License
-
-No license specified. Feel free to reach out to the repository owner if you'd like to use any part of this code.
+This is a personal learning repository and isn't actively seeking contributions, but feel free to explore, fork, or open an issue if you spot something worth discussing.
 
 ## Author
 
-**Talha Habib** — [@TalhaHabib-hub](https://github.com/TalhaHabib-hub)
+**Talha Habib**: [@TalhaHabib-hub](https://github.com/TalhaHabib-hub)
